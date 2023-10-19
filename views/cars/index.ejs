@@ -1,11 +1,15 @@
 <%- include('../partials/header') %>
 
+<% cars.forEach((car) => {  %>
 <ul>
-    <% cars.forEach((car) => { %>
+    <h2><a href="/cars/<%= car.id %>"><%= car.make %></a></h2>
         <li>
-            <%=  %>
+            <%= car.year %>
         </li>
-    <% }) %>
+        <li>
+            <%= car.isUsed ? 'Used' : "New" %>
+        </li>
 </ul>
+<% }); %>
 
 <%- include('../partials/footer') %>
